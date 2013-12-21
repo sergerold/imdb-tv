@@ -8,7 +8,6 @@ pugilib=src/pugixml/src/pugixml.o
 curllib=src/libcurl/lib/.libs/libcurl.a
 tidylib=src/tidy/tidy-html5-master/lib/libtidy.a
 CFLAGS=-c 
-C11FLAG=-std=c++11
 MTFLAG=-fopenmp -lpthread
 tempdir=src/temp
 
@@ -32,7 +31,7 @@ curlandclean.o:$(curlandclean)
 	$(CC) $(CFLAGS) $(curlandclean)
 
 $(series):src/Series.cpp
-	$(CC) $(CFLAGS) $(C11FLAG) $(MTFLAG) src/Series.cpp
+	$(CC) $(CFLAGS) $(MTFLAG) src/Series.cpp
 
 $(episode):src/Episode.cpp
 	$(CC) $(CFLAGS) src/Episode.cpp
