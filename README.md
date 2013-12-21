@@ -33,9 +33,13 @@ OBJECTS AND FUNCTIONS
 -Episode
 
 -These are initialised by the constructor parameter of the IMDB ID e.g. '/title/tt1475582/' i.e. NOT the absolute URL
+
 -If create a Series object then calling the constructor will automatically retrieve the ID of every episode of that Series
+
 -To retrieve the actual data for each episode then call Series::getEpisodes()
+
 -To return a std::string of XML for that Series the call Series::getXML()
+
 -You can access data for that episode by the methods listed in Series.h and Episode.h
 
 WARNING: ANY CHANGE TO IMDB HTML DESIGN MAY CAUSE THIS PROGRAM TO FAIL (PARTIALLY OR ENTIRELY)
