@@ -1,7 +1,7 @@
 #include "include/Series.h"
 #include "include/curlandclean.h"
 #include "pugixml/src/pugixml.hpp"
-
+#include <stdio.h>
 
  #define NUM_THREADS 20
 
@@ -58,7 +58,10 @@ Series::Series (std::string inputURL)
 	if (!episode_list.size())
 		throw "ERROR: NO EPISODES FOUND";
 
-	setEpisode_count (std::to_string(getEpisode_list().size()));
+
+	char intstr [5];
+	sprintf(intstr,"%d",getEpisode_list().size());
+	setEpisode_count(intstr);
 
 	//set name
 	series_value = doc.select_single_node("//span[@itemprop='name']").node();
