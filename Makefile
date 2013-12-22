@@ -37,7 +37,7 @@ $(episode):src/Episode.cpp
 	$(CC) $(CFLAGS) src/Episode.cpp
 
 $(curllib):
-	cd src/libcurl && ./configure --disable-shared
+	cd src/libcurl && ./configure --disable-shared --without-zlib --without-ssl --without-libidn --disable-cookies --disable-crypto-auth  --disable-ldap --disable-ldaps  --without-librtmp
 	cd src/libcurl && $(MAKE)
 
 $(pugilib):
