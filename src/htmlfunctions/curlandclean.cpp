@@ -123,6 +123,11 @@ std::string get_html_content (std::string url)
  
   /* init the curl session */ 
   curl_handle = curl_easy_init();
+
+ curl_easy_setopt(curl_handle, CURLOPT_NOSIGNAL, 1);
+
+  curl_easy_setopt(curl_handle, CURLOPT_CONNECTTIMEOUT, 90);                    //TIMEOUT VALS
+  curl_easy_setopt(curl_handle, CURLOPT_TIMEOUT, 100);
  
   /* specify URL to get */ 
   curl_easy_setopt(curl_handle, CURLOPT_URL, url.c_str());
